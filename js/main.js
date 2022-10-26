@@ -47,38 +47,44 @@ for ( let i = 0; i < images.length; i++) {
     let active= 0;
 
     btnNext.addEventListener ('click', function(){             
-        if ( active < 5 ) {
+        if ( active < 4 ) {
             active = active + 1;
-            console.log("valore next = " + active);     
+            console.log("valore next in if = " + active);     
             // console.log(divList[0]);
             divList[active].classList.add("active");
             divList[active - 1].classList.remove("active");
         } else {
-            console.log("uscito");
-        }   
-    });      
+            console.log("valore next in else = " + active);     
+            divList[0].classList.add("active");
+            divList[4].classList.remove("active");
+            active = 0;
+            // active = active + 1;
+            console.log("valore next in else = " + active);     
+            // console.log(divList[0]);
+            divList[active].classList.add("active");
+            // divList[active - 1].classList.remove("active");
+            // active = active - images.length;
+            // active = active + 1;           
+            // divList[active].classList.add("active");
+            // divList[active - 1].classList.remove("active");
+        }  
+        
+        
+    }); 
 
     btnPrev.addEventListener('click',function() {
-        if (active > 0) {
-            active = active - 1;
+            divList[4].classList.add("active");
+            divList[0].classList.remove("active");
+        // if (active > 0) {
             console.log("valore prev = " + active);         
-            divList[active].classList.add("active");
-            divList[active + 1].classList.remove("active");
-        } else {
-            active = 4;            
-            divList[active].classList.add("active");
-            divList[active + 1].classList.remove("active");
+            active = active - 1;         
+            // divList[active].classList.add("active");
+            // divList[active + 1].classList.remove("active");
+        // } else {
+            // active = 4;            
+            // divList[active].classList.add("active");
+            // divList[active + 1].classList.remove("active");
         }            
-    });  
-
-    
-
-    
-
-    
-
-    
-
-        // let activeimg= images[active].classList.add('active'); 
+    );  
         
         
