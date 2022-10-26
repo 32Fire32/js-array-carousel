@@ -20,8 +20,6 @@
 
 .carousel {
     position: relative;
-    width: 700px;
-    height: 400px;
     margin: auto;
 }
 
@@ -52,7 +50,9 @@
 }
 
 .item {
-    display: none;    
+    display: none;  
+    width: 700px;
+    height: 400px;  
 }
 
 .active {
