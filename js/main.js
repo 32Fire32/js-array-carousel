@@ -46,20 +46,29 @@ for ( let i = 0; i < images.length; i++) {
 
     let active= 0;
 
-    btnNext.addEventListener ('click', function(){         
-        active = active + 1;
-        console.log("valore next = " + active);     
-        console.log(divList[0]);
-        divList[active].classList.add("active");
-        divList[active - 1].classList.remove("active");
+    btnNext.addEventListener ('click', function(){             
+        if ( active < 5 ) {
+            active = active + 1;
+            console.log("valore next = " + active);     
+            // console.log(divList[0]);
+            divList[active].classList.add("active");
+            divList[active - 1].classList.remove("active");
+        } else {
+            console.log("uscito");
+        }   
     });      
 
     btnPrev.addEventListener('click',function() {
-        active = active - 1;
-        console.log("valore prev = " + active);         
-        divList[active].classList.add("active");
-        divList[active + 1].classList.remove("active");
-            
+        if (active > 0) {
+            active = active - 1;
+            console.log("valore prev = " + active);         
+            divList[active].classList.add("active");
+            divList[active + 1].classList.remove("active");
+        } else {
+            active = 4;            
+            divList[active].classList.add("active");
+            divList[active + 1].classList.remove("active");
+        }            
     });  
 
     
