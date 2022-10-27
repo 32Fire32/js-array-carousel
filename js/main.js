@@ -42,48 +42,57 @@ for ( let i = 0; i < images.length; i++) {
             
     }
 
-    // console.log(divList);
 
     let active= 0;
+    const items = document.querySelectorAll(".item");
 
-    btnNext.addEventListener ('click', function(){             
-        if ( active < 4 ) {
-            active = active + 1;
-            console.log("valore next in if = " + active);     
-            // console.log(divList[0]);
-            divList[active].classList.add("active");
-            divList[active - 1].classList.remove("active");
-        } else {
-            console.log("valore next in else = " + active);     
-            divList[0].classList.add("active");
-            divList[4].classList.remove("active");
+    btnNext.addEventListener ('click', function() {   
+        items[active].classList.remove('active');
+        if ( active === images.length - 1) {
             active = 0;
-            // active = active + 1;
-            console.log("valore next in else = " + active);     
-            // console.log(divList[0]);
-            divList[active].classList.add("active");
-            // divList[active - 1].classList.remove("active");
-            // active = active - images.length;
-            // active = active + 1;           
-            // divList[active].classList.add("active");
-            // divList[active - 1].classList.remove("active");
-        }  
-        
-        
+        } else {
+            active++;
+        }
+        items[active].classList.add('active');
+
+          
+        // if ( active < 4 ) {
+        //     active = active + 1;
+        //     console.log("valore active in if = " + active);     
+        //     divList[active].classList.add("active");
+        //     divList[active - 1].classList.remove("active");
+        // } else {
+        //     console.log("valore active in else = " + active);     
+        //     divList[0].classList.add("active");
+        //     divList[4].classList.remove("active");
+        //     active = 0;
+        //     console.log("valore active in else = " + active);     
+        //     divList[active].classList.add("active");
+        // }         
     }); 
 
     btnPrev.addEventListener('click',function() {
-            divList[4].classList.add("active");
-            divList[0].classList.remove("active");
-        // if (active > 0) {
-            console.log("valore prev = " + active);         
-            active = active - 1;         
-            // divList[active].classList.add("active");
-            // divList[active + 1].classList.remove("active");
-        // } else {
-            // active = 4;            
-            // divList[active].classList.add("active");
-            // divList[active + 1].classList.remove("active");
+        //     active = 4;
+        //     // divList[4].classList.add("active");
+        //     // divList[0].classList.remove("active");
+        // // if (active > 0) {
+        //     console.log("valore active = " + active);         
+        //     active = active - 1;   
+        //     console.log("valore active = " + active);         
+        //     // divList[active].classList.add("active");
+        //     // divList[active + 1].classList.remove("active");
+        // // } else {
+        //     // active = 4;            
+        //     // divList[active].classList.add("active");
+        items[active].classList.remove('active');
+        if( active === 0 ) {
+            active = images.length -1;
+        } else {
+            active--;
+        }
+        items[active].classList.add('active');
+
+        //     // divList[active + 1].classList.remove("active");
         }            
     );  
         
